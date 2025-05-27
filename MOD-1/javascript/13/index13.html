@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Debug Registration Form</title>
+  <style>
+    form {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input, button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+    }
+    #message {
+      text-align: center;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">Register for the Event</h2>
+  <form id="registrationForm">
+    <label>
+      Name:
+      <input type="text" name="name" required>
+    </label>
+    <label>
+      Email:
+      <input type="email" name="email" required>
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="message"></div>
+
+  <script src="debug1.js"></script>
+</body>
+</html>

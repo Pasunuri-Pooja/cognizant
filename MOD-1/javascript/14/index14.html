@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Event Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .event-card {
+      display: none;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin: 1rem auto;
+      max-width: 300px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    #registerBtn {
+      display: block;
+      margin: 2rem auto;
+      padding: 0.75rem 1.5rem;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #registerBtn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="registerBtn">Toggle Event Card</button>
+
+  <div class="event-card" id="eventCard">
+    <h3>Community Clean-Up</h3>
+    <p>Join us this weekend to help clean the neighborhood park!</p>
+  </div>
+
+  <script src="main1.js"></script>
+
+  <!-- Benefit Note -->
+  <p style="text-align: center; font-style: italic;">
+    <strong>Note:</strong> While jQuery is simple and effective for small tasks, modern frameworks like <strong>React</strong> or <strong>Vue</strong> provide better structure, reactivity, and component-based development for scalable applications.
+  </p>
+
+</body>
+</html>

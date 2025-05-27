@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Async Event Fetch</title>
+  <style>
+    #spinner {
+      display: none;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    .event-item {
+      margin: 10px 0;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Events List</h1>
+  <div id="spinner">Loading events...</div>
+  <div id="eventsContainer"></div>
+
+  <button id="fetchThen">Fetch with .then()</button>
+  <button id="fetchAsync">Fetch with async/await</button>

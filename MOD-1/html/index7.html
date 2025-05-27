@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Promo Video</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      padding: 20px;
+      text-align: center;
+    }
+
+    video {
+      max-width: 100%;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    #videoMessage {
+      margin-top: 10px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>You're Invited!</h2>
+  <p>Watch the video below to learn more about our upcoming event.</p>
+
+  <video 
+    id="promoVideo" 
+    controls 
+    oncanplay="videoReady()"
+  >
+    <source src="promo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div id="videoMessage"></div>
+
+  <script>
+    function videoReady() {
+      document.getElementById("videoMessage").textContent = "🎉 Video ready to play!";
+    }
+
+    window.onbeforeunload = function (e) {
+      // Customize this logic if there's a form or unsaved changes
+      e.preventDefault();
+      e.returnValue = "You have unsaved changes. Are you sure you want to leave?";
+    };
+  </script>
+
+</body>
+</html>

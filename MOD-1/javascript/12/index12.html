@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Registration</title>
+  <style>
+    form {
+      max-width: 400px;
+      margin: 20px auto;
+    }
+    label, input {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    #message {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Register for an Event</h2>
+  <form id="registrationForm">
+    <label>
+      Name:
+      <input type="text" name="name" required>
+    </label>
+    <label>
+      Email:
+      <input type="email" name="email" required>
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="message"></div>
+
+  <script src="main12.js"></script>
+</body>
+</html>

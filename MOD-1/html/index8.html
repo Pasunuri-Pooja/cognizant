@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Preferences</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    select, button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    #message {
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Select Your Preferred Event Type</h2>
+
+  <select id="eventType" onchange="savePreference()">
+    <option value="">-- Choose an Event --</option>
+    <option value="Music">Music</option>
+    <option value="Art">Art</option>
+    <option value="Tech">Tech</option>
+    <option value="Sports">Sports</option>
+  </select>
+
+  <button onclick="clearPreferences()">Clear Preferences</button>
+
+  <div id="message"></div>
+
+  <script>
+    // Load stored preference on page load
+    window.onload = function () {
+      const storedEvent = localStorage.getItem("preferredEventType");
+      if (storedEvent) {
+        document.getElementById("eventType").value = storedEvent;
+        document.getElementById("message").textContent = `Loaded your preference: ${storedEvent}`;
+      }
+    };
+
+    // Save selected event to localStorage
+    function savePreference() {
+      const eventType = document.getElementById("eventType").value;
+      if (eventType) {
+        localStorage.setItem("preferredEventType", eventType);
+        document.getElementById("message").textContent = `Preference saved: ${eventType}`;
+      }
+    }
+
+    // Clear both localStorage and sessionStorage
+    function clearPreferences() {
+      localStorage.clear();
+      sessionStorage.clear();
+      document.getElementById("eventType").value = "";
+      document.getElementById("message").textContent = "Preferences cleared.";
+    }
+  </script>
+
+</body>
+</html>

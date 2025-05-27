@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Debugging Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    /* Intentional style issue: too large font-size */
+    .header {
+      font-size: 50px;
+      color: darkblue;
+    }
+    /* Intentional style issue: missing margin */
+    .content {
+      background-color: lightgray;
+      padding: 15px;
+      /* margin missing */
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="header">Welcome to Debugging Demo</h1>
+  
+  <div class="content">
+    <p>This content block has layout issues you can fix with Inspect Element.</p>
+  </div>
+
+  <button id="testBtn">Run Script</button>
+  
+  <script>
+    console.log("Script loaded");
+
+    const btn = document.getElementById("testBtn");
+
+    btn.addEventListener("click", function() {
+      console.log("Button clicked");
+
+      let x = 10;
+      let y = 0;
+
+      // Intentional error: divide by zero
+      let result = x / y; 
+
+      // Set breakpoint here in DevTools to inspect 'x', 'y', and 'result'
+      debugger;
+
+      if (!isFinite(result)) {
+        console.error("Error: Division by zero!");
+        alert("Oops! Something went wrong with the calculation.");
+      } else {
+        alert("Calculation result: " + result);
+      }
+    });
+  </script>
+
+</body>
+</html>
